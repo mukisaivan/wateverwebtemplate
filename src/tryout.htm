@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            background-color: black;
+            /* display: flex; */
+            /* min-height: 100vh; */
+            flex-direction: column;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+        
+        .header {
+            background-color: white;
+            height: 40px;
+            justify-content: center;
+            display: flex;
+            z-index: 1;
+        }
+        
+        .contentcontainer {
+            display: flex;
+            flex-direction: column;
+            margin: 60px 20px 0px 20px;
+        }
+        
+        .contents {
+            /* flex-grow: 1; */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: 100%;
+        }
+        
+        .footer {
+            background-color: white;
+            height: 40px;
+            justify-content: center;
+            display: flex;
+        }
+        
+        .box {
+            background-color: rgb(101, 71, 71);
+            color: black;
+            padding: 3px;
+            flex-grow: 1;
+            display: flex;
+            height: 50px;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+        }
+        
+        .box:nth-child(2) {
+            position: sticky;
+            left: 50%;
+        }
+        
+        .middleboxes {
+            display: flex;
+            flex-direction: row;
+            margin: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .middleboxes .box7 {
+            position: relative;
+            bottom: 60px;
+        }
+        
+        .middleboxes .box6 {
+            position: relative;
+            bottom: 60px;
+        }
+        
+        .box14 {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background-color: aqua;
+            right: -50%;
+            margin: 5px;
+        }
+        
+        .box13 {
+            position: relative;
+            background-color: rgb(9, 255, 0);
+            right: -200px;
+            top: 50px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">Header</header>
+        <div class="contentcontainer">
+            <main class="contents">
+                <div class="box1 box">box1</div>
+                <div class="box2 box">box2</div>
+                <div class="box3 box">box3</div>
+                <div class="box4 box">box4</div>
+                <div class="box5 box">box5</div>
+                <div class="middleboxes">
+                    <div class="box6 box">box6</div>
+                    <div class="box7 box">box7</div>
+                    <div class="box8 box">box8</div>
+                    <div class="box9 box">box9</div>
+                    <div class="box10 box">box10</div>
+                </div>
+                <div class="box11 box">box11</div>
+                <div class="box12 box">box12</div>
+                <div class="box13 box">box13</div>
+                <div class="box14 box">box14</div>
+                <div class="box15 box">box15</div>
+                <div class="box16 box">box16</div>
+                <div class="box17 box">box17</div>
+                <div class="box18 box">box18</div>
+            </main>
+        </div>
+        <div class="footer">Footer</div>
+    </div>
+
+</body>
+
+</html>

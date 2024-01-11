@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+        
+         :root {
+            --HEADER-BGCOLOR: green;
+            --BGCOLOR: #475569;
+            --BGIMAGE: radial-gradient(whitesmoke, #475569);
+        }
+        
+        body {
+            background-color: var(--BGCOLOR);
+            background-image: var(--BGIMAGE);
+        }
+        
+        .contents {
+            display: grid;
+            /* grid-template-columns: repeat(9, 1fr); */
+            grid-template-areas: "hd hd hd hd hd hd hd hd hd" "sd sd mn mn mn mn mn mn mn" "ft ft ft ft ft ft ft ft ft";
+            /* gap: 0.5rem; */
+            gap: min(2vw, 20px);
+            grid-auto-rows: 75px auto 75px;
+        }
+        
+        .header {
+            background-color: var(--HEADER-BGCOLOR);
+            grid-area: hd;
+            color: white;
+            height: fit-content;
+            display: flex;
+            flex-flow: column;
+            z-index: 1;
+        }
+        
+        .container {
+            display: grid;
+            grid-area: mn;
+            gap: 0.5rem;
+            position: relative;
+            margin: 0px;
+            /* top: 110px; */
+            scroll-behavior: smooth;
+        }
+        
+        .sidebar {
+            background-color: pink;
+            grid-area: sd;
+            border-radius: 20px;
+            /* top: 110px; */
+            position: relative;
+        }
+        
+        .footer {
+            background-color: brown;
+            grid-area: ft;
+            z-index: 1;
+            position: fixed;
+        }
+        
+        .box {
+            background-color: rgb(0, 0, 0);
+            height: 100px;
+            margin: 0px;
+            border-radius: 20px;
+        }
+        
+        .box:hover {
+            background-color: rgb(69, 38, 38);
+            transition-duration: 1s;
+        }
+        
+        .box:last-child {
+            width: 200px;
+            background-color: purple;
+            border-radius: 20px;
+        }
+        
+        .box:nth-child(3) {
+            width: 200px;
+            background-color: rgb(0, 213, 255);
+            border-radius: 20px;
+        }
+        
+        .el {
+            /* display: grid; */
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            color: white;
+        }
+        
+        @media screen and (min-width: 576px) {
+            .contents {
+                margin: 0 400px;
+                border-left: 5px solid black;
+                border-right: 5px solid black;
+                padding: 0 10px;
+            }
+        }
+        
+        @media (prefers-color-scheme: dark) {
+             :root {
+                background-color: grey;
+            }
+        }
+        
+        .box3:hover {
+            background-color: blue;
+            transform: rotate(360deg);
+            transition-duration: 3s;
+            transition-timing-function: ease-in-out;
+        }
+        /* .box4 {
+            animation-name: slide;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out
+        } */
+        
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(100px);
+            }
+            100% {
+                transform: translateX(-5px);
+            }
+        }
+        
+        .headertitleline {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            padding: 0.3rem 1rem;
+        }
+        
+        .menubutton {
+            background-color: transparent;
+            height: 38px;
+            margin-top: 5px;
+            width: 28px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+        }
+        
+        .menuicon,
+        .menuicon::before,
+        .menuicon::after {
+            background-color: white;
+            border: none;
+            position: absolute;
+            width: 40px;
+            height: 5px;
+            transition: all 0.5s;
+        }
+        
+        .menuicon::before,
+        .menuicon::after {
+            content: "";
+        }
+        
+        .menuicon::after {
+            transform: translate(-20px, -12px);
+        }
+        
+        .menuicon::before {
+            transform: translate(-20px, 12px);
+        }
+        
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            flex-flow: column nowrap;
+        }
+        
+        nav li {
+            padding: 0.5rem;
+            border-top: 1px solid;
+        }
+        
+        nav a {
+            display: block;
+            text-align: center;
+            width: 80%;
+            margin: auto;
+        }
+        
+        nav a:any-link {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        
+        nav a:hover,
+        nav a:focus {
+            transform: scale(1.2);
+            transition: all 0.3s;
+        }
+        
+        @keyframes showMenu {
+            0% {
+                transform: scaleY(0);
+            }
+            50% {
+                transform: scaleY(1.2);
+            }
+            100% {
+                transform: scaleY(1);
+            }
+        }
+        
+        nav {
+            display: none;
+            animation: showMenu 0.5s ease-in-out forwards;
+        }
+        
+         :is(header:hover, header:focus-within) .menuicon {
+            transform: rotate(360deg);
+            background-color: transparent;
+        }
+        
+         :is(header:hover, header:focus-within) .menuicon::before {
+            transform: translateX(-20px) rotate(45deg);
+        }
+        
+         :is(header:hover, header:focus-within) .menuicon::after {
+            transform: translateX(-20px) rotate(-45deg);
+        }
+        
+         :is(header:hover, header:focus-within) nav {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="contents">
+        <header class="header">
+            <section class="headertitleline">
+                <h1>Header</h1>
+                <button class="menubutton">
+                  <div class="menuicon"></div>
+                </button>
+            </section>
+            <nav class="nav">
+                <ul>
+                    <li><a href="">Products</a></li>
+                    <li><a href="">Forum</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="container main">
+            <div class="box box1 el" data="this is a box">1</div>
+            <div class="box box2 el">2</div>
+            <div class="box box3 el">3</div>
+            <div class="box box4 el">4</div>
+            <div class="box box5 el">5</div>
+            <div class="box box6 el">6</div>
+        </main>
+        <div class="sidebar el">Side Bar</div>
+        <footer class="footer el">Footer</footer>
+    </section>
+
+</body>
+
+</html>

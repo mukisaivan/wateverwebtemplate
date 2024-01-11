@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: rgb(40, 40, 40);
+        }
+        
+        .container {
+            height: auto;
+            color: aliceblue;
+            display: flex;
+            justify-content: center;
+            margin-inline: auto;
+            flex-wrap: wrap;
+            min-height: 100vh;
+        }
+        
+        .container div {
+            /* margin: 0px 2px;
+            min-height: 100vh;
+            min-width: 33%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black; */
+            margin: 2px;
+        }
+        
+        .container1 {
+            background-color: bisque;
+            flex-grow: 1;
+        }
+        
+        .container2 {
+            background-color: palevioletred;
+            flex-grow: 20;
+        }
+        
+        .container3 {
+            background-color: yellow;
+            flex-grow: 1;
+        }
+        
+        .container div:hover {
+            color: aqua;
+        }
+        
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-basis: 100px;
+        }
+        /* ++++++++++++++++++++++++++++++++++++++++ */
+        
+        .ncontainer {
+            display: grid;
+            grid-template-columns: 2fr 5fr 2fr;
+            margin-top: 20px;
+            min-height: 50vh;
+            column-gap: 2px;
+        }
+        
+        .ncontainer1 {
+            background-color: magenta;
+        }
+        
+        .ncontainer2 {
+            background-color: lawngreen;
+        }
+        
+        .ncontainer3 {
+            background-color: blue;
+            display: grid;
+            grid-column: 1/4;
+            margin-right: 20px;
+        }
+        
+        .nbox {
+            align-items: center;
+            justify-content: center;
+            display: grid;
+            border-radius: 30px;
+            color: black;
+            margin: 3px;
+        }
+        
+        .nbox:hover {
+            color: rgb(255, 0, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container1 box"> hey</div>
+        <div class="container2 box">hello</div>
+        <div class="container3 box">how</div>
+    </div>
+    <div class="ncontainer">
+        <div class="ncontainer1 nbox"> hey</div>
+        <div class="ncontainer2 nbox">hello</div>
+        <div class="ncontainer3 nbox">how</div>
+    </div>
+
+
+
+</body>
+
+</html>
