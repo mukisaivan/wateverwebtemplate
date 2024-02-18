@@ -90,10 +90,12 @@ ul {
 }
 
 .items {
-    animation: showMenu 2s ease-in-out;
+    animation: showMenu 1.3s ease-in-out forwards;
     display: none;
-    position: absolute;
-    right: inherit;
+    margin-left: 40px;
+    scale: 1;
+    background-color: black;
+    color: white;
 }
 
 .hyphen,
@@ -138,8 +140,15 @@ ul {
     transform: rotate(-45deg);
 }
 
-header:hover .items {
-    display: block;
+.drawer:hover .items {
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
 }
 
 .column1 .icons img {
@@ -159,6 +168,10 @@ header:hover .items {
     align-items: center;
     overflow-y: auto;
     flex-flow: row wrap;
+}
+
+.hero div {
+    height: 350px;
 }
 
 .column3 img {
@@ -206,6 +219,10 @@ header:hover .items {
     fill: #FFFFFF;
 }
 
+.wave2 .shape-fill {
+    fill: #FFFFFF;
+}
+
 .wordy {
     background-color: white;
     display: flex;
@@ -242,10 +259,23 @@ header:hover .items {
     flex-flow: row wrap;
 }
 
+.wordycontent div {
+    height: 350px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
 .column1 {
     /* transform: rotateY(360deg); */
     transition: all 2s;
     /* animation: infinite slide 2s ease-in-out forwards; */
+}
+
+.wordy img {
+    height: 300px;
+    width: 300px;
+    border-radius: 40px;
+    position: relative;
 }
 
 @keyframes slide {
@@ -268,6 +298,32 @@ header:hover .items {
         transform: scaleY(1.2);
     }
     100% {
-        transform: scaleY(1);
+        transform: scaleY(1.2);
     }
+}
+
+.footer div {
+    height: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px;
+}
+
+.footercolumn {
+    width: 50%;
+    margin: 20px;
+    border-radius: 34px;
+}
+
+.fcol1 {
+    background-color: red;
+}
+
+.fcol2 {
+    background-color: greenyellow;
+}
+
+.fcol3 {
+    background-color: pink;
 }
