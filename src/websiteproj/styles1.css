@@ -154,6 +154,7 @@ ul {
 .column1 .icons img {
     height: 40px;
     display: flex;
+    padding-top: 5px;
 }
 
 .hero {
@@ -162,7 +163,7 @@ ul {
     background-image: linear-gradient(230deg, rgb(213, 202, 213), rgb(86, 132, 211), rgb(37, 101, 212), rgb(0, 53, 143));
     min-height: 100vh;
     width: 100%;
-    gap: 3rem;
+    gap: 2rem;
     justify-content: space-between;
     padding: 0 3%;
     align-items: center;
@@ -176,13 +177,9 @@ ul {
 
 .column3 img {
     height: 300px;
-    width: 300px;
+    width: 100%;
     border-radius: 40px;
     position: relative;
-}
-
-.column1 {
-    background-color: red;
 }
 
 .column2 {
@@ -197,6 +194,16 @@ ul {
     flex: 1;
     box-sizing: border-box;
     height: 100%;
+}
+
+.ourproducts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    height: 100px;
+    background-color: white;
+    padding: 40px;
 }
 
 .wave {
@@ -223,40 +230,22 @@ ul {
     fill: #FFFFFF;
 }
 
-.wordy {
+.wordycontent {
     background-color: white;
     display: flex;
-    min-height: 100vh;
-    width: 100%;
-    gap: 3rem;
-    justify-content: space-between;
-    padding: 0 3%;
-    align-items: center;
-    overflow-y: auto;
-    flex-flow: column;
-}
-
-.wordy h1 {
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    padding: 40px;
-    position: relative;
-    top: 0;
-}
-
-.wordycontent {
-    display: flex;
-    flex: 1;
-    box-sizing: border-box;
     height: 100%;
     gap: 3rem;
     justify-content: space-between;
     padding: 0 3%;
-    /* align-items: center; */
+    align-items: center;
     overflow-y: auto;
     width: 100%;
     flex-flow: row wrap;
+    padding-bottom: 40px;
+}
+
+.wordycontent {
+    display: flex;
 }
 
 .wordycontent div {
@@ -265,17 +254,18 @@ ul {
     overflow-x: hidden;
 }
 
+.wordycontent .column3 img {
+    height: 300px;
+    border-radius: 40px;
+    width: 100%;
+    position: relative;
+}
+
 .column1 {
     /* transform: rotateY(360deg); */
     transition: all 2s;
+    background-color: black;
     /* animation: infinite slide 2s ease-in-out forwards; */
-}
-
-.wordy img {
-    height: 300px;
-    width: 300px;
-    border-radius: 40px;
-    position: relative;
 }
 
 @keyframes slide {
